@@ -46,6 +46,12 @@ describe('Finanzas Duck', () => {
 
       expect(result).toEqual([1])
     });
+
+    it('Default reducer', () => {
+      const result = reducer([1, 2], { type: 'NOTHING' });
+
+      expect(result).toEqual([1, 2]);
+    });
   })
 
 })
