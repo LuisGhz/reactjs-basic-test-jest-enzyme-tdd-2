@@ -14,6 +14,16 @@ describe('Finanzas Duck', () => {
       
     });
 
+    it('Delete', () => {
+      const result = eliminar(1);
+
+      expect(result).toEqual({
+        type: 'ELIMINAR',
+        index: 1
+      });
+
+    });
+
   });
 
 })
