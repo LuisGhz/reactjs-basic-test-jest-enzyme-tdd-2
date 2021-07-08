@@ -11,7 +11,7 @@ function Titulo() {
   return <h2 className="title">Finanzly</h2>;
 }
 
-function App({ finanzas, agregarFinanza, eliminarFinanza }) {
+function App({ finanzas, agregarFinanza, eliminarFinanza, fetchUsuarios }) {
   const total = finanzas.reduce((acc, el) => acc + el.cant, 0);
   return (
     <div className="section">
@@ -32,7 +32,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   agregarFinanza: finanza => dispatch(agregar(finanza)),
-  eliminarFinanza: index => dispatch(eliminar(index))
+  eliminarFinanza: index => dispatch(eliminar(index)),
+  fetchUsuarios: () => dispatch(fetchUsuarios())
 });
 
 export default connect(
