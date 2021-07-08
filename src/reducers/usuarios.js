@@ -52,7 +52,8 @@ export default function reducer(state = initialState, action) {
 }
 
 export const fetchUsuarios = () =>
-  async (dispatch, getState, { axios }) => {
+async (dispatch, getState, { axios }) => {
+    console.log('Run')
     dispatch(fetchUsuariosStart())
     try {
       const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
@@ -61,4 +62,3 @@ export const fetchUsuarios = () =>
       dispatch(fetchUsuariosError(e))
     }
   }
-
