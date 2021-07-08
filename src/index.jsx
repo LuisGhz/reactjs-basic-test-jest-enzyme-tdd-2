@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as reducers from './reducers';
+import * as services from './services';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(combineReducers({
   ...reducers,
-}));
+}), applyMiddleware(thunk.withExtraArgument(services)));
 
 
 ReactDOM.render(
