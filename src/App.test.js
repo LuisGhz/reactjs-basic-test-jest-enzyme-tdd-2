@@ -37,7 +37,7 @@ describe('App', () => {
 
     wrapper
       .find('button')
-      .at(1)
+      .at(2)
       .simulate('click');
 
     const [a, ...rest] = reducer.mock.calls;
